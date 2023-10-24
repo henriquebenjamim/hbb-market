@@ -18,7 +18,9 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Column(nullable = false)
     private String name;
+    @Column(scale = 2, columnDefinition = "decimal")
     private Float price;
     private String image;
     @Column(name = "active")

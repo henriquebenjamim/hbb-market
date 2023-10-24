@@ -49,5 +49,6 @@ public class ProductService {
     public void boolDelete(UUID id) {
         Product productToDeactivate = productRepository.getById(id);
         productToDeactivate.setIsAvailable(false);
+        productRepository.save(productToDeactivate);
     }
 }
