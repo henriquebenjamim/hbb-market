@@ -3,6 +3,8 @@ package com.hbbMarket.marketplace.controller;
 import com.hbbMarket.marketplace.exceptions.ProductNotFoundException;
 import com.hbbMarket.marketplace.model.Product;
 import com.hbbMarket.marketplace.service.ProductService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,29 +16,34 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/products")
+@Tag(name = "product-controller")
 public class ProductController {
 
     @Autowired
     private ProductService productService;
 
+    @Operation(summary = "CREATE a product")
     @PostMapping
-    public ResponseEntity<Product> post(@RequestBody @Valid Product product) {
+    public ResponseEntity<Product> createProduct(@RequestBody @Valid Product product) {
         return new ResponseEntity<>(productService.create(product), HttpStatus.CREATED);
     }
 
+    @Operation(summary = "READ All Products")
     @GetMapping
-    public List<Product> get() {
+    public List<Product> getAllProducts() {
         return productService.list();
     }
 
+    @Operation(summary = "UPDATE a product")
     @PutMapping("{id}")
-    public ResponseEntity<Product> put(@PathVariable UUID id, @RequestBody Product productDetails) throws ProductNotFoundException {
+    public ResponseEntity<Product> updateProduct(@PathVariable UUID id, @RequestBody Product productDetails) throws ProductNotFoundException {
         Product newProd = productService.update(id, productDetails);
         return new ResponseEntity<>(newProd, HttpStatus.ACCEPTED);
     }
 
+    @Operation(summary = "DELETE a product(BOOL)")
     @DeleteMapping("{id}")
-    public void delete(@PathVariable("id") UUID id) {
+    public void deleteProduct(@PathVariable("id") UUID id) {
         productService.boolDelete(id);
     }
 }
