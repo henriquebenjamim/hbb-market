@@ -24,13 +24,14 @@ Here is a checklist of what has been accomplished in this project:
 - [x] Service: Business logic for products is implemented in a service.
 - [x] Controller: RESTful API endpoints for products are created in a controller.
 - [x] Exceptions: Custom exceptions for handling errors related to products are implemented.
+- [x] Swagger Documentation: Comprehensive documentation for the API using Swagger.
 
 ### Docker & Postgres:
 
 - [x] Connection with database by docker on docker-compose and using flyway for migrations
 
 ### Future Enhancements:
-- [ ] Swagger Documentation: Comprehensive documentation for the API using Swagger.
+
 - [ ] Authentication: Implement user authentication and authorization for added security.
 - [ ] Front End with Angular (Plus Point): Develop a front-end interface using Angular to provide a complete e-commerce experience.
 - [ ] Unit tests
