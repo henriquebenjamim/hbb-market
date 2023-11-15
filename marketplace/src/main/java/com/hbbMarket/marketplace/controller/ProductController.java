@@ -4,6 +4,8 @@ import com.hbbMarket.marketplace.exceptions.ProductNotFoundException;
 import com.hbbMarket.marketplace.model.Product;
 import com.hbbMarket.marketplace.service.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +44,10 @@ public class ProductController {
     }
 
     @Operation(summary = "DELETE a product(BOOL)")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "204", description = "Product deleted successfully"),
+            @ApiResponse(responseCode = "404", description = "Product not found")
+    })
     @DeleteMapping("{id}")
     public void deleteProduct(@PathVariable("id") UUID id) {
         productService.boolDelete(id);
