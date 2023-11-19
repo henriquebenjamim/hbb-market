@@ -26,9 +26,18 @@ public class Product {
     @Column(name = "active")
     private Boolean isAvailable;
 
+    public Product(String name, Float price, Boolean isAvailable) {
+        this.name = name;
+        this.price = price;
+        this.isAvailable = isAvailable;
+    }
+
     public Product(String name, Float price) {
         this.name = name;
         this.price = price;
     }
 
+    public Boolean isActive() {
+        return isAvailable;
+    }
 }
