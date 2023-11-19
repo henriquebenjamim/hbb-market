@@ -32,7 +32,9 @@ Here is a checklist of what has been accomplished in this project:
 
 ### Future Enhancements:
 
-- [ ] Authentication: Implement user authentication and authorization for added security.
-- [ ] Front End with Angular (Plus Point): Develop a front-end interface using Angular to provide a complete e-commerce experience.
+- [x] Authentication: Implement user authentication and authorization for added security.
 - [ ] Unit tests
 - [ ] Deploy
+
+### Plus point:
+- [ ] Front End with Angular: Develop a front-end interface using Angular to provide a complete e-commerce experience.

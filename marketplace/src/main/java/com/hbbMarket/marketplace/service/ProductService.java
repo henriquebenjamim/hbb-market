@@ -3,7 +3,6 @@ package com.hbbMarket.marketplace.service;
 import com.hbbMarket.marketplace.exceptions.ProductNotFoundException;
 import com.hbbMarket.marketplace.model.Product;
 import com.hbbMarket.marketplace.repository.ProductRepository;
-import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,7 +14,7 @@ public class ProductService {
 
     private ProductRepository productRepository;
 
-    public ProductService(ProductRepository productRepository) {
+    public ProductService() {
         this.productRepository = productRepository;
     }
 

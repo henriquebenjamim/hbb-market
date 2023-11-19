@@ -25,4 +25,10 @@ public class Product {
     private String image;
     @Column(name = "active")
     private Boolean isAvailable;
+
+    public Product(String name, Float price) {
+        this.name = name;
+        this.price = price;
+    }
+
 }
